@@ -3,8 +3,8 @@ import time
 import camera
 
 last_on_time = None
-HIGH_TEMPERATURE = 50
-LOW_TEMPERATURE = 48
+HIGH_TEMPERATURE = 60
+LOW_TEMPERATURE = 50
 MIN_FAN_ON_TIME = 10
 
 def isFanOn():

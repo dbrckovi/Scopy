@@ -36,7 +36,7 @@ def start():
     #config = picam.create_preview_configuration(main={"size": (STREAM_WIDTH, STREAM_HEIGHT)})
     
     preview_config = picam2.create_preview_configuration(main={"size": (STREAM_WIDTH, STREAM_HEIGHT)})
-    preview_config["transform"] = libcamera.Transform(hflip=1, vflip=1)
+    preview_config["transform"] = libcamera.Transform(hflip=0, vflip=0)
     picam2.configure(preview_config)
     picam2.start_preview(Preview.QTGL, x=0, y=0, width=WINDOW_WIDTH, height=WINDOW_HEIGHT)
     picam2.start()
