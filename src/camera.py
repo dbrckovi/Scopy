@@ -58,9 +58,10 @@ def stop():
   global streaming
 
   if streaming:
+    streaming = False
+    time.sleep(0.1)
     picam2.stop()
     picam2.close()
-    streaming = False
     print("Stopped streaming")
 
 def set_normal_zoom_center():       # zooms in to center, so that one pixel from camera equals one pixel on screen

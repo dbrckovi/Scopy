@@ -37,3 +37,6 @@ def checkTemperature():
       print(temp_celsius)
       print("Turned Off fan")  
       camera.refresh_overlay()
+
+def cleanup():
+  in_out.setOutput(in_out.FAN_ON, False)

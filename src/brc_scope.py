@@ -117,3 +117,4 @@ while should_exit == False:
 camera.stop()
 fan_control.cleanup()
 in_out.cleanup()
+print("Scope exited")
