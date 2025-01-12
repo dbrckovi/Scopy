@@ -33,13 +33,14 @@ def start():
 
   if not streaming:
     picam2 = Picamera2()
-    #config = picam.create_preview_configuration(main={"size": (STREAM_WIDTH, STREAM_HEIGHT)})
     
     preview_config = picam2.create_preview_configuration(main={"size": (STREAM_WIDTH, STREAM_HEIGHT)})
     preview_config["transform"] = libcamera.Transform(hflip=0, vflip=0)
     picam2.configure(preview_config)
     picam2.start_preview(Preview.QTGL, x=0, y=0, width=WINDOW_WIDTH, height=WINDOW_HEIGHT)
     picam2.start()
+    picam2.set_controls({"Brightness": 0.1})
+    picam2.set_controls({"Contrast": 1.1})
     full_res = picam2.camera_properties['PixelArraySize']
     streaming = True
     print("Started streaming")
@@ -60,6 +61,7 @@ def stop():
   if streaming:
     streaming = False
     time.sleep(0.1)
+    picam2.stop_preview();
     picam2.stop()
     picam2.close()
     print("Stopped streaming")
