@@ -1,1 +1,3 @@
 /run_scopy.sh
+__pycache__/
+*.pyc
