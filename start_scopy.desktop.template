@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Scopy
+Exec=lxterminal -e {dir}/run_scopy.sh

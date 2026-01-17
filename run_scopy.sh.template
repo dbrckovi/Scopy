@@ -1,6 +1,6 @@
 #!/bin/bash
 while true; do
-  python ./src/brc_scope.py
+  python {dir}/src/brc_scope.py
   EXIT_CODE=$?
   if [ $EXIT_CODE -eq 0 ]; then
     echo "Normal exit. Stopping."
