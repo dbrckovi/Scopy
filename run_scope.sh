@@ -1,0 +1,11 @@
+#!/bin/bash
+while true; do
+  python ./src/brc_scope.py
+  EXIT_CODE=$?
+  if [ $EXIT_CODE -eq 0 ]; then
+    echo "Normal exit. Stopping."
+    break
+  fi
+  echo "Crashed with code $EXIT_CODE. Restarting in 2 seconds..."
+  sleep 2
+done
