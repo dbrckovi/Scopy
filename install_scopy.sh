@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check if running on Raspberry Pi
+if [ ! -f /proc/device-tree/model ] || ! grep -q "Raspberry Pi" /proc/device-tree/model; then
+  echo "Error: This script must be run on a Raspberry Pi"
+  exit 1
+fi
+
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
